@@ -1,1 +1,1 @@
-# Laser-project
+# Lazor-project
