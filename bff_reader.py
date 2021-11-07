@@ -6,9 +6,13 @@ def bff_reader(file):
     blocks = [0,0,0]
     laser = []
     intersect = []
+    
+    # reorganize the file. Remove all the comments and space sentences.
     for line in lines:
         if not "#" in line and line:
             lines_no_comment.append(line)
+    
+    # Recognize the lazer grid
     for i in range(0,len(lines_no_comment)):
         if lines_no_comment[i] == 'GRID START':
             for j in range(i+1, len(lines_no_comment)):
@@ -17,6 +21,7 @@ def bff_reader(file):
                     lazer_grid.remove(lines_no_comment[j])
                     break
 
+    # Recognize the blocks and seperate them into A, B, C
     for i in range(0,len(lines_no_comment)):
         if lines_no_comment[i][0] == 'A':
             blocks[0] = int(lines_no_comment[i][2])
@@ -25,10 +30,12 @@ def bff_reader(file):
         if lines_no_comment[i][0] == 'C':
             blocks[2] = int(lines_no_comment[i][2])
     
+    # Recognize the laser 
     for i in range(0,len(lines_no_comment)):
         if lines_no_comment[i][0] == 'L':
             laser.append(lines_no_comment[i].strip('L '))
     
+    # Recognize all the intersect
     for i in range(0,len(lines_no_comment)):
         if lines_no_comment[i][0] == 'P':
             intersect.append(lines_no_comment[i].strip('P '))
