@@ -23,6 +23,8 @@ def bff_reader(file):
 
     # Recognize the blocks and seperate them into A, B, C
     for i in range(0,len(lines_no_comment)):
+        if lines_no_comment[i] != 'GRID STOP':
+            continue
         if lines_no_comment[i][0] == 'A':
             blocks[0] = int(lines_no_comment[i][2])
         if lines_no_comment[i][0] == 'B':
