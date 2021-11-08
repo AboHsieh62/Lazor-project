@@ -21,6 +21,7 @@ def bff_reader(file):
                     lazer_grid.remove(lines_no_comment[j])
                     break
 
+    # Remove the grid from the list to better recognize other elements
     for i in range(0,len(lines_no_comment)):
         lines_no_comment.remove(lines_no_comment[i])
         if lines_no_comment[i] == 'GRID STOP':
