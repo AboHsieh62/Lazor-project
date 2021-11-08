@@ -16,9 +16,9 @@ def bff_reader(file):
     for i in range(0,len(lines_no_comment)):
         if lines_no_comment[i] == 'GRID START':
             for j in range(i+1, len(lines_no_comment)):
-                lazer_grid.append(lines_no_comment[j])
+                lazer_grid.append(lines_no_comment[j].replace(' ',''))
                 if lines_no_comment[j] == 'GRID STOP':
-                    lazer_grid.remove(lines_no_comment[j])
+                    lazer_grid.remove(lines_no_comment[j].replace(' ',''))
                     break
     del lines_no_comment[0:j+1]
 
