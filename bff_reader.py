@@ -44,4 +44,11 @@ def bff_reader(file):
     return lazer_grid, blocks, laser, intersect
 
 if __name__ == '__main__':
+    print(bff_reader('yarn_5.bff'))
+    print(bff_reader('dark_1.bff'))
     print(bff_reader('mad_1.bff'))
+    print(bff_reader('mad_4.bff'))
+    print(bff_reader('mad_7.bff'))
+    print(bff_reader('numbered_6.bff'))
+    print(bff_reader('showstopper_4.bff'))
+    print(bff_reader('tiny_5.bff'))
