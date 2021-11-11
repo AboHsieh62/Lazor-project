@@ -34,12 +34,22 @@ def bff_reader(file):
     # Recognize the laser
     for i in range(0,len(lines_no_comment)):
         if lines_no_comment[i][0] == 'L':
-            laser.append(lines_no_comment[i].strip('L '))
+            temp = lines_no_comment[i].split()
+            temp.pop(0)
+            temp = [int(x) for x in temp]
+            temp = [temp[i:i + 2] for i in range(0, len(temp), 2)]
+            for j in range(len(temp)):
+                laser.append(tuple(temp[j]))
     
     # Recognize all the intersect
     for i in range(0,len(lines_no_comment)):
         if lines_no_comment[i][0] == 'P':
-            intersect.append(lines_no_comment[i].strip('P '))
+            temp = lines_no_comment[i].split()
+            temp.pop(0)
+            temp = [int(x) for x in temp]
+            temp = [temp[i:i + 2] for i in range(0, len(temp), 2)]
+            for j in range(len(temp)):
+                intersect.append(tuple(temp[j]))
                           
     return lazer_grid, blocks, laser, intersect
 
