@@ -51,7 +51,18 @@ def bff_reader(file):
             for j in range(len(temp)):
                 intersect.append(tuple(temp[j]))
                           
-    return lazer_grid, blocks, laser, intersect
+    grid_len = 2*len(lazer_grid[0])+1
+    grid.append(['x']*grid_len)
+    for i in range(0,len(lazer_grid)):
+        ll = list(lazer_grid[i])
+        j = 0
+        while j < grid_len:
+            ll.insert(j,'x')
+            j=j+2
+        grid.append(ll)
+        grid.append(['x']*grid_len)
+                          
+    return grid, blocks, laser, intersect
 
 if __name__ == '__main__':
     print(bff_reader('yarn_5.bff'))
