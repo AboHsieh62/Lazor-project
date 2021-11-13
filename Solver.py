@@ -17,8 +17,8 @@ class Block:
                 The x y coordinates of the block on the board
 
         '''
-        self.coord = coordinates;
-        self.blktype = blktype;
+        self.coord = coordinates
+        self.blktype = blktype
 
 
     def next_direction(self, curr_direct, position):
