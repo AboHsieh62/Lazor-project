@@ -170,7 +170,7 @@ def laser_runner(board, laser_origin, target_list):
             # Check if laser is at the boundaries.
             # If so, append an empty list to this list in laserpos and skip to
             # the next laser
-            if (not pos_chk(board, pos)) and (ITER > 1):
+            if (not pos_chk(board, pos)) and (trials > 1):
                 laserpos[i].append([])
                 continue
 
