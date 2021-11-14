@@ -1,5 +1,5 @@
 # Lazor-project
-This is a Python solver for the game Lazors.  
+This is a Python solver for the game Lazors.
 
 ## How To Use
 1. Uncomment the .bff file you want to run in the file named Lazor project.py, then run file.
@@ -14,3 +14,7 @@ Fig 1. Solution for tiny_5. Retractive blocks are in white, opaque blocks are in
 2. Lazor_tarck.py: The main algorithm for determining the laser pathways and finding a solution.
 3. Lazor_save.py: Saves the final solution into a .png file.
 4. Lazor project.py: The main(and only) file needed to run in order to solve the board.
+
+## Contributors
+Po-I Hsieh
+Vina Ro
